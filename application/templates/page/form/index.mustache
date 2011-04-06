@@ -1,0 +1,19 @@
+{{%DOT-NOTATION}}
+
+<style type='text/css'>
+	label, input[type=text], textarea {
+		display: block;
+	}
+</style>
+
+<h2>Form validation</h2>
+
+<form action='/form' method='post'>
+	<label>title</label>
+	<input type='text' name='form[title]' />
+	<label>description</label>
+	<textarea name='form[description]'></textarea>
+	<br />
+	
+	<input type='submit' value='submit' />
+</form>
