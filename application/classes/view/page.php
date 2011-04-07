@@ -2,6 +2,8 @@
 
 class View_Page extends View_Layout {
 	
+	public  $_errors = array();
+	
 	public function _initialize()
 	{
 		Assets::add_group('default-template');
@@ -31,6 +33,23 @@ class View_Page extends View_Layout {
 		}
 
 		return $assets;
+	}
+	
+	public function errors()
+	{
+		$e = array();
+		
+		foreach($this->_errors as $key => $error)
+		{
+			$e[] = array(
+				'field' => $key, 'message' => $error
+			);
+		}
+		
+		if(count($e) < 1)
+			return;
+		
+		return array('messages' => $e);
 	}
 	
 	public function render()
