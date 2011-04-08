@@ -1,0 +1,27 @@
+{{%DOT-NOTATION}}
+
+<style>
+label, input textarea {
+	display: block;
+}
+</style>
+
+{{#errors}}
+<div style='border: 1px solid #ccc; padding: 5px; width: 500px;'>
+<ul>
+	{{#messages}}
+	<li>{{message}}</li>
+	{{/messages}}
+</ul>
+</div>
+{{/errors}}
+
+<form method='post'>
+	<label for='title'>title </label>
+	<input id='title' name='post[title]' type='text' />
+	
+	<label for='content'>content </label>
+	<textarea id='content' name='post[content]'></textarea>
+	<br />
+	<input type='submit' value='post' />
+</form>
