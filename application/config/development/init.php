@@ -15,5 +15,6 @@
  */
 
 return array(
+	'index_file' => '',
 	'base_url'   => '/',
 );
