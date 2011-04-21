@@ -1,0 +1,19 @@
+<h2>Login</h2>
+
+{{#errors}}
+<ul class="error">
+  {{#messages}}<li>{{message}}</li>{{/messages}}
+</ul>
+{{/errors}}
+
+<form action='/auth/login' method='post'>
+	<label>username<label>
+	<br />
+	<input id='username' name='username' type='text' />
+	<br />
+	<label>password<label>
+	<br />
+	<input id='password' name='password' type='password' />
+	<br />
+	<input type='submit' value='login' />
+</form>

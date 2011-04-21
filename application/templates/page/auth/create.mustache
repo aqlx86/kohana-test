@@ -1,0 +1,36 @@
+{{%DOT-NOTATION}}
+
+<h2>create user</h2>
+
+{{#errors}}
+<ul class="error">
+  {{#messages}}<li>{{message}}</li>{{/messages}}
+</ul>
+{{/errors}}
+
+<form action='/auth/create' method='post'>
+	<label>username<label>
+	<br />
+	<input id='username' name='username' type='text' />
+	<br />
+	<label>email<label>
+	<br />
+	<input id='email' name='email' type='text' />
+	<br />
+	<label>password<label>
+	<br />
+	<input id='password' name='password' type='password' />
+	
+	<fieldset>
+		<legend>assign user roles</legend>
+		{{#roles}}
+		<input id='role_{{name}}' name='roles[]' type='checkbox' value='{{id}}' /> <label for='role_{{name}}'>{{name}} - </label>
+		<span style='font-style: italic; color: #ccc;'>{{description}}</span>
+		<br />
+		{{/roles}}
+	</fieldset>
+
+	<br />
+	<input type='submit' value='login' />
+
+</form>
