@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="application"/>
+	<buildpathentry kind="src" path="htdocs"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/classes"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/config"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/i18n"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/messages"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/tests/kohana"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/tests/test_data"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/utf8"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/views/kohana"/>
+	<buildpathentry kind="src" path="kohana/3.1.3/views/profiler"/>
+	<buildpathentry kind="src" path="modules/auth/classes"/>
+	<buildpathentry kind="src" path="modules/auth/config"/>
+	<buildpathentry kind="src" path="modules/cache/classes"/>
+	<buildpathentry kind="src" path="modules/cache/config"/>
+	<buildpathentry kind="src" path="modules/cache/tests/cache"/>
+	<buildpathentry kind="src" path="modules/codebench"/>
+	<buildpathentry kind="src" path="modules/database/classes"/>
+	<buildpathentry kind="src" path="modules/database/config"/>
+	<buildpathentry kind="src" path="modules/image/classes"/>
+	<buildpathentry kind="src" path="modules/image/config"/>
+	<buildpathentry kind="src" path="modules/kostache"/>
+	<buildpathentry kind="src" path="modules/orm/classes"/>
+	<buildpathentry kind="src" path="modules/orm/config"/>
+	<buildpathentry kind="src" path="modules/unittest"/>
+	<buildpathentry kind="src" path="modules/userguide"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

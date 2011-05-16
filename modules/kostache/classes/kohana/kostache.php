@@ -12,7 +12,7 @@
  */
 abstract class Kohana_Kostache {
 
-	const VERSION = '2.0.1';
+	const VERSION = '2.0.4';
 
 	/**
 	 * Factory method for Kostache views. Accepts a template path and an
@@ -23,9 +23,9 @@ abstract class Kohana_Kostache {
 	 * @return  Kostache
 	 * @throws  Kohana_Exception  if the view class does not exist
 	 */
-	public static function factory($template, array $partials = NULL)
+	public static function factory($path, array $partials = NULL)
 	{
-		$class = 'View_'.str_replace('/', '_', $template);
+		$class = 'View_'.str_replace('/', '_', $path);
 
 		if ( ! class_exists($class))
 		{
@@ -34,7 +34,7 @@ abstract class Kohana_Kostache {
 			));
 		}
 
-		return new $class($template, $partials);
+		return new $class(NULL, $partials);
 	}
 
 	/**
@@ -60,8 +60,16 @@ abstract class Kohana_Kostache {
 	{
 		if ( ! $template)
 		{
-			// Detect the template for this class
-			$template = $this->_detect_template();
+			if ($this->_template)
+			{
+				// Load the template defined in the view
+				$template = $this->_template;
+			}
+			else
+			{
+				// Detect the template for this class
+				$template = $this->_detect_template();
+			}
 		}
 
 		// Load the template
@@ -103,7 +111,7 @@ abstract class Kohana_Kostache {
 			ob_start();
 
 			// Render the exception
-			Kohana_Exception::text($e);
+			Kohana_Exception::handler($e);
 
 			return (string) ob_get_clean();
 		}
@@ -215,7 +223,9 @@ abstract class Kohana_Kostache {
 	 */
 	protected function _stash($template, Kostache $view, array $partials)
 	{
-		return new Mustache($template, $view, $partials);
+		return new Kohana_Mustache($template, $view, $partials, array(
+			'charset' => Kohana::$charset,
+		));
 	}
 
 	/**
